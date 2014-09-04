@@ -1,5 +1,6 @@
 __author__ = 'olorin'
 import time
+from random import shuffle
 
 
 def gettime(fun, *args):
@@ -32,10 +33,13 @@ def qsort(L):
     if L: return qsort(filter(lambda x: x < L[0], L)) + L[0:1] + qsort(filter(lambda x: x > L[0], L))
     return []
 
-myarray = [20,234,32434,22,1,98,267,7,10,1231]
-print(myarray)
-print("sorted array by my qsort",sort(myarray,0,len(myarray)-1))
-print("sorted array by lambda sort", qsort(myarray))
+def listsort(mylist):
+    return sorted(mylist)
+
+myarray = [[i] for i in range(100)]
+shuffle(myarray)
+
 print(gettime(sort,myarray,0,len(myarray)-1))
 print(gettime(qsort,myarray))
+print(gettime(listsort,myarray))
 
