@@ -58,7 +58,7 @@ def qsort(L):
 def listsort(mylist):
     return sorted(mylist)
 
-myarray = [[i] for i in range(100)]
+myarray = [[i] for i in range(10)]
 shuffle(myarray)
 print(myarray)
 print(sort_bubble(myarray))
